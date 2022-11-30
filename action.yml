@@ -13,8 +13,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    DASTARDLY_TARGET_URL: $'https://ginandjuice.shop'
-    DASTARDLY_OUTPUT_FILE: /github/workspace/${{ inputs.output-filename }}
+    DASTARDLY_TARGET_URL=https://ginandjuice.shop -e \
+    DASTARDLY_OUTPUT_FILE=/dastardly/dastardly-report.xml \
 branding:
   icon: 'activity'
   color: 'green'
