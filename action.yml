@@ -1,4 +1,11 @@
-docker run --user $(id -u) --rm -v $(pwd):/dastardly -e \
-DASTARDLY_TARGET_URL=https://ginandjuice.shop -e \
-DASTARDLY_OUTPUT_FILE=/dastardly/dastardly-report.xml \
-public.ecr.aws/portswigger/dastardly:latest
+    - task: CmdLine@2
+        displayName: Run DAST scan with dastardly
+        inputs:
+        script: |
+            docker run --user $(id -u) --rm -v $(pwd):/dastardly -e \
+            DASTARDLY_TARGET_URL=$(url_to_scan) -e \
+            DASTARDLY_OUTPUT_FILE=/dastardly/dastardly-report.xml \
+            public.ecr.aws/portswigger/dastardly:latest
+            true            
+        failOnStderr: false
+        workingDirectory: '$(Build.SourcesDirectory)'
