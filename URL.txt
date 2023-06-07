@@ -1,0 +1,8 @@
+dev-portal.blueleopard.com
+dev-admin.blueleopard.com
+dev-auth.blueleopard.com
+qa-portal.blueleopard.com
+qa-auth.blueleopard.com
+qa-admin.blueleopard.com
+qapay1.blueleopard.com
+Devpay1.blueleopard.com
